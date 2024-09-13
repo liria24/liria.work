@@ -1,0 +1,24 @@
+---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import LogoAvatio from "../../public/logo_avatio.svg";
+---
+
+<div class="w-full flex flex-col gap-6">
+    <div
+        class="w-fit flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-8 text-neutral-500"
+    >
+        <Image
+            src={LogoAvatio}
+            alt="Liria Graphics"
+            class="w-44 sm:w-56 object-cover flex-shrink-0"
+        />
+        <div class="flex items-center gap-1.5 pt-2">
+            <p>now private alpha</p>
+        </div>
+    </div>
+
+    <div class="flex items-center">
+        <div class="w-full h-40 rounded-lg bg-neutral-700"></div>
+    </div>
+</div>

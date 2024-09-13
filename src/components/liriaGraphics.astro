@@ -1,0 +1,34 @@
+---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import LogoLiriaGraphics from "../../public/logo_liria_graphics_002_vector.svg";
+
+const repeatCount = 10;
+---
+
+<div class="w-full flex flex-col gap-6">
+    <a
+        href="https://eicosapenta.booth.pm/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-fit flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-8 text-neutral-500 hover:text-neutral-300"
+    >
+        <Image
+            src={LogoLiriaGraphics}
+            alt="Liria Graphics"
+            class="w-48 sm:w-64 h-12 object-cover flex-shrink-0"
+        />
+        <div class="flex items-center gap-1.5">
+            <p>booth.pm</p>
+            <Icon name="lucide:square-arrow-out-up-right" />
+        </div>
+    </a>
+
+    <div class="flex items-center gap-3 overflow-clip">
+        {
+            Array.from({ length: repeatCount }).map(() => (
+                <div class="size-40 flex-shrink-0 rounded-lg bg-neutral-700" />
+            ))
+        }
+    </div>
+</div>
