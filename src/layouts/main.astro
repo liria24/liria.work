@@ -1,18 +1,16 @@
 ---
-import Header from "./header.astro";
-import Footer from "./footer.astro";
-import LiriaGraphics from "@/components/liriaGraphics.astro";
-import Avatio from "@/components/avatio.astro";
-import Member from "@/components/member.astro";
+import "@/styles/base.css";
 ---
 
-<main class="px-8 py-6 size-full flex flex-col gap-24 items-center">
-    <Header />
-    <div class="w-full flex flex-col items-center gap-20 px-8">
-        <div class="h-32"></div>
-        <LiriaGraphics />
-        <Avatio />
-        <Member />
-    </div>
-    <Footer />
-</main>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Liria</title>
+    </head>
+    <body class="bg-neutral-900">
+        <slot />
+    </body>
+</html>

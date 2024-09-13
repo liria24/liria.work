@@ -5,16 +5,38 @@ import LogoAvatio from "../../public/logo_avatio.svg";
 ---
 
 <div class="w-full flex flex-col gap-6">
-    <div
-        class="w-fit flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-8 text-neutral-500"
-    >
-        <Image
-            src={LogoAvatio}
-            alt="Liria Graphics"
-            class="w-44 sm:w-56 object-cover flex-shrink-0"
-        />
-        <div class="flex items-center gap-1.5 pt-2">
-            <p>now private alpha</p>
+    <div class="w-fit flex flex-col items-start gap-3">
+        <a
+            href="https://eicosapenta.booth.pm/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-fit flex mb-1"
+        >
+            <Image
+                src={LogoAvatio}
+                alt="Liria Graphics"
+                class="w-44 sm:w-56 object-cover flex-shrink-0"
+            />
+        </a>
+
+        <div class="w-fit flex items-center gap-8">
+            <div class="w-fit flex items-center gap-1.5 text-neutral-500">
+                <p>now private alpha</p>
+            </div>
+
+            <a
+                href="https://documents.liria.work/avatio"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-fit flex"
+            >
+                <div
+                    class="flex items-center gap-1.5 text-neutral-500 hover:text-neutral-300"
+                >
+                    <p>documents</p>
+                    <Icon name="lucide:square-arrow-out-up-right" />
+                </div>
+            </a>
         </div>
     </div>
 
