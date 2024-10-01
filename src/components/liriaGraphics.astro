@@ -1,9 +1,21 @@
 ---
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
-import LogoLiriaGraphics from "../../public/logo_liria_graphics_002_vector.svg";
+import LogoLiriaGraphics from "../../public/graphics/logo.svg";
 
-const repeatCount = 10;
+import ItemCrystalHorn from "../../public/graphics/item_crystal_horn.png";
+import ItemCharmChoker from "../../public/graphics/item_charm_choker.png";
+import ItemKeyholder from "../../public/graphics/item_keyholder.png";
+import ItemLogoPack from "../../public/graphics/item_logo_pack.png";
+import ItemRewardNyaacup6 from "../../public/graphics/item_reward_nyaacup6.png";
+
+const items = [
+    ItemCrystalHorn,
+    ItemCharmChoker,
+    ItemKeyholder,
+    ItemLogoPack,
+    ItemRewardNyaacup6,
+];
 ---
 
 <div class="w-full flex flex-col gap-6">
@@ -54,8 +66,14 @@ const repeatCount = 10;
 
     <div class="flex items-center gap-3 overflow-clip">
         {
-            Array.from({ length: repeatCount }).map(() => (
-                <div class="size-40 flex-shrink-0 rounded-lg bg-neutral-700" />
+            Array.from(items).map((item) => (
+                <a class="flex-shrink-0">
+                    <Image
+                        src={item}
+                        alt="Liria Graphics"
+                        class="w-48 object-cover"
+                    />
+                </a>
             ))
         }
     </div>
