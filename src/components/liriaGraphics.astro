@@ -1,30 +1,31 @@
 ---
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
+
 import LogoLiriaGraphics from "../../public/graphics/logo.svg";
 
-import ItemCrystalHorn from "../../public/graphics/item_crystal_horn.png";
-import ItemCharmChoker from "../../public/graphics/item_charm_choker.png";
-import ItemKeyholder from "../../public/graphics/item_keyholder.png";
-import ItemLogoPack from "../../public/graphics/item_logo_pack.png";
-import ItemRewardNyaacup6 from "../../public/graphics/item_reward_nyaacup6.png";
-
-const items = [
-    ItemCrystalHorn,
-    ItemCharmChoker,
-    ItemKeyholder,
-    ItemLogoPack,
-    ItemRewardNyaacup6,
-];
+import { getLiriaGraphics } from "../lib/microcms";
+const { contents } = await getLiriaGraphics();
 ---
 
+<script>
+    const handleWheel: EventListener = (event) => {
+        const container = event.currentTarget as HTMLElement;
+        container.scrollLeft += (event as WheelEvent).deltaY;
+        event.preventDefault(); // デフォルトの縦スクロールを無効化
+    };
+
+    const scrollContainer = document.querySelector(".scroll-container");
+    scrollContainer?.addEventListener("wheel", handleWheel);
+</script>
+
 <div class="w-full flex flex-col gap-6">
-    <div class="w-fit flex flex-col items-start gap-3">
+    <div class="w-fit flex flex-wrap items-center gap-x-8 gap-y-2">
         <a
             href="https://eicosapenta.booth.pm/"
             target="_blank"
             rel="noopener noreferrer"
-            class="w-fit flex"
+            class="w-fit flex hover:opacity-60 transition ease-in-out duration-200"
         >
             <Image
                 src={LogoLiriaGraphics}
@@ -41,7 +42,7 @@ const items = [
                 class="w-fit flex"
             >
                 <div
-                    class="flex items-center gap-1.5 text-neutral-500 hover:text-neutral-300"
+                    class="flex items-center gap-1.5 text-neutral-500 hover:text-neutral-600 transition ease-in-out duration-200"
                 >
                     <p>booth.pm</p>
                     <Icon name="lucide:square-arrow-out-up-right" />
@@ -55,7 +56,7 @@ const items = [
                 class="w-fit flex"
             >
                 <div
-                    class="flex items-center gap-1.5 text-neutral-500 hover:text-neutral-300"
+                    class="flex items-center gap-1.5 text-neutral-500 hover:text-neutral-600 transition ease-in-out duration-200"
                 >
                     <p>documents</p>
                     <Icon name="lucide:square-arrow-out-up-right" />
@@ -64,17 +65,56 @@ const items = [
         </div>
     </div>
 
-    <div class="flex items-center gap-3 overflow-clip">
+    <div
+        class="w-fit flex items-center gap-3 overflow-x-auto no-scrollbar scroll-container"
+    >
         {
-            Array.from(items).map((item) => (
-                <a class="flex-shrink-0">
-                    <Image
-                        src={item}
-                        alt="Liria Graphics"
-                        class="w-48 object-cover"
-                    />
-                </a>
-            ))
+            Array.from(contents).map((content) => () => {
+                if (content.notForSale) {
+                    return (
+                        <div class="flex-shrink-0 w-fit gap-0.5 flex flex-col items-center text-neutral-500">
+                            <img
+                                src={content.thumbnail.url}
+                                alt={content.title}
+                                class="w-32 sm:w-48 object-cover"
+                            />
+                            <p class="">NOT FOR SALE</p>
+                        </div>
+                    );
+                } else {
+                    return (
+                        <a
+                            href={`https://booth.pm/ja/items/${content.booth}`}
+                            target="_blank"
+                            class="flex-shrink-0 w-fit gap-0.5 flex flex-col items-center text-neutral-500 hover:opacity-70 transition ease-in-out duration-200"
+                        >
+                            <img
+                                src={content.thumbnail.url}
+                                alt={content.title}
+                                class="w-40 sm:w-48 object-cover"
+                            />
+                            <p>
+                                {content.price === 0
+                                    ? "FREE"
+                                    : `${content.price} JPY`}
+                            </p>
+                        </a>
+                    );
+                }
+            })
         }
     </div>
 </div>
+
+<style>
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+</style>

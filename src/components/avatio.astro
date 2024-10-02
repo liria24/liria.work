@@ -5,12 +5,12 @@ import LogoAvatio from "../../public/avatio/logo.svg";
 ---
 
 <div class="w-full flex flex-col gap-6">
-    <div class="w-fit flex flex-col items-start gap-3">
+    <div class="w-fit flex flex-wrap items-center gap-x-8 gap-y-2">
         <a
-            href="https://eicosapenta.booth.pm/"
+            href=""
             target="_blank"
             rel="noopener noreferrer"
-            class="w-fit flex mb-1"
+            class="w-fit flex mb-1 hover:opacity-60 transition ease-in-out duration-200"
         >
             <Image
                 src={LogoAvatio}
@@ -19,9 +19,11 @@ import LogoAvatio from "../../public/avatio/logo.svg";
             />
         </a>
 
-        <div class="w-fit flex items-center gap-8">
-            <div class="w-fit flex items-center gap-1.5 text-neutral-500">
-                <p>now private alpha</p>
+        <div class="w-fit flex items-center gap-8 pt-2">
+            <div
+                class="w-fit flex items-center gap-1.5 text-neutral-500 transition ease-in-out duration-200"
+            >
+                <p>now in private alpha</p>
             </div>
 
             <a
@@ -31,7 +33,7 @@ import LogoAvatio from "../../public/avatio/logo.svg";
                 class="w-fit flex"
             >
                 <div
-                    class="flex items-center gap-1.5 text-neutral-500 hover:text-neutral-300"
+                    class="flex items-center gap-1.5 text-neutral-500 hover:text-neutral-600 transition ease-in-out duration-200"
                 >
                     <p>documents</p>
                     <Icon name="lucide:square-arrow-out-up-right" />
@@ -41,6 +43,10 @@ import LogoAvatio from "../../public/avatio/logo.svg";
     </div>
 
     <div class="flex items-center">
-        <div class="w-full h-40 rounded-lg bg-neutral-700"></div>
+        <div
+            class="w-full h-64 rounded-lg flex items-center justify-center bg-neutral-700"
+        >
+            <p class="text-neutral-500">preparing</p>
+        </div>
     </div>
 </div>

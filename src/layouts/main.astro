@@ -1,14 +1,39 @@
 ---
 import "@/styles/base.css";
+import { SEO } from "astro-seo";
 ---
 
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
+        <SEO
+            charset="utf-8"
+            title="Liria"
+            description="Liria is a personal circle by Liry24."
+            openGraph={{
+                basic: {
+                    title: "Liria",
+                    type: "",
+                    image: "",
+                },
+            }}
+            twitter={{
+                creator: "@liria_work",
+                card: "summary_large_image",
+                image: "",
+                title: "Liria",
+                description: "Liria is a personal circle by Liry24.",
+            }}
+            extend={{
+                link: [{ rel: "icon", href: "/favicon.ico" }],
+                meta: [
+                    {
+                        name: "viewport",
+                        content: "width=device-width, initial-scale=1",
+                    },
+                ],
+            }}
+        />
         <meta name="generator" content={Astro.generator} />
-        <title>Liria</title>
     </head>
     <body class="bg-neutral-900">
         <slot />
