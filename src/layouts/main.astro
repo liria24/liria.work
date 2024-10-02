@@ -1,27 +1,30 @@
 ---
 import "@/styles/base.css";
 import { SEO } from "astro-seo";
+
+const title = "Liria";
+const description = "Liria is a personal circle by Liry24.";
 ---
 
 <html lang="en">
     <head>
         <SEO
             charset="utf-8"
-            title="Liria"
-            description="Liria is a personal circle by Liry24."
+            title="title"
+            description="description"
             openGraph={{
                 basic: {
-                    title: "Liria",
-                    type: "",
+                    title: title,
+                    type: "website",
                     image: "",
                 },
             }}
             twitter={{
-                creator: "@liria_work",
+                site: "@liria_work",
                 card: "summary_large_image",
                 image: "",
-                title: "Liria",
-                description: "Liria is a personal circle by Liry24.",
+                title: title,
+                description: description,
             }}
             extend={{
                 meta: [
