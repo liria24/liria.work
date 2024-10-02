@@ -10,6 +10,9 @@ export default defineConfig({
     output: "static",
 
     site: "http://liria.work",
+    image: {
+        domains: ["images.microcms-assets.io", "avatars.githubusercontent.com"],
+    },
 
     integrations: [tailwind({ applyBaseStyles: false }), icon(), compressor()],
 });
