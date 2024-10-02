@@ -21,7 +21,9 @@ export type liriaGraphics = {
     }[];
 };
 
-export const getLiriaGraphics = async (queries?: MicroCMSQueries) => {
+export const getLiriaGraphics = async (
+    queries?: MicroCMSQueries
+): Promise<liriaGraphics> => {
     return await client.get<liriaGraphics>({
         endpoint: "liria-graphics",
         queries,
