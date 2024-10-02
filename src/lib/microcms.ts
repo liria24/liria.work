@@ -20,12 +20,6 @@ export type liriaGraphics = {
         notForSale: boolean;
     }[];
 };
-// export type BlogResponse = {
-//     totalCount: number;
-//     offset: number;
-//     limit: number;
-//     contents: Blog[];
-// };
 
 export const getLiriaGraphics = async (queries?: MicroCMSQueries) => {
     return await client.get<liriaGraphics>({
