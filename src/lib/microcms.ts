@@ -13,7 +13,7 @@ export type liriaGraphics = {
         updatedAt: string;
         publishedAt: string;
         revisedAt: string;
-        title: string;
+        title: { ja: string; en: string };
         thumbnail: { url: string; width: number; height: number };
         booth: number;
         price: number;

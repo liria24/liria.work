@@ -76,7 +76,7 @@ const { contents } = await getLiriaGraphics();
                         <div class="flex-shrink-0 w-fit gap-0.5 flex flex-col items-center text-neutral-500">
                             <Image
                                 src={content.thumbnail.url}
-                                alt={content.title}
+                                alt={content.title.en}
                                 width="192"
                                 height="192"
                                 loading="eager"
@@ -94,7 +94,7 @@ const { contents } = await getLiriaGraphics();
                         >
                             <Image
                                 src={content.thumbnail.url}
-                                alt={content.title}
+                                alt={content.title.en}
                                 width="192"
                                 height="192"
                                 loading="eager"
