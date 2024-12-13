@@ -1,10 +1,10 @@
 ---
-import { Icon } from "astro-icon/components";
-import { Image } from "astro:assets";
+import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
 
-import LogoLiriaGraphics from "../../public/graphics/logo.svg";
+import LogoLiriaGraphics from '../assets/logo_graphics.svg';
 
-import { getLiriaGraphics } from "../lib/microcms";
+import { getLiriaGraphics } from '../lib/microcms';
 const { contents } = await getLiriaGraphics();
 ---
 
@@ -15,23 +15,25 @@ const { contents } = await getLiriaGraphics();
         event.preventDefault(); // デフォルトの縦スクロールを無効化
     };
 
-    const scrollContainer = document.querySelector(".scroll-container");
-    scrollContainer?.addEventListener("wheel", handleWheel);
+    const scrollContainer = document.querySelector('.scroll-container');
+    scrollContainer?.addEventListener('wheel', handleWheel);
 </script>
 
-<div class="w-full flex flex-col gap-6">
+<div
+    class="w-full flex flex-col gap-4 [&_*]:transition-all [&_*]:ease-in-out [&_*]:duration-200 [&_*]:dalay-0"
+>
     <div class="w-fit flex flex-wrap items-center gap-x-8 gap-y-2">
         <a
             href="https://eicosapenta.booth.pm/"
             target="_blank"
             rel="noopener noreferrer"
-            class="w-fit flex hover:opacity-60 transition ease-in-out duration-200"
+            class="w-fit flex hover:opacity-60"
         >
             <Image
                 src={LogoLiriaGraphics}
                 alt="Liria Graphics"
                 loading="eager"
-                class="w-48 sm:w-64 h-12 object-cover flex-shrink-0"
+                class="w-48 sm:w-64 object-cover flex-shrink-0"
             />
         </a>
 
@@ -40,28 +42,32 @@ const { contents } = await getLiriaGraphics();
                 href="https://eicosapenta.booth.pm/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="w-fit flex"
+                class="group flex gap-2 items-center"
             >
-                <div
-                    class="flex items-center gap-1.5 text-neutral-500 hover:text-neutral-600 transition ease-in-out duration-200"
-                >
-                    <p>booth.pm</p>
-                    <Icon name="lucide:square-arrow-out-up-right" />
-                </div>
+                <span class="text-neutral-500 group-hover:text-red-400">
+                    booth.pm
+                </span>
+                <Icon
+                    name="lucide:arrow-up-right"
+                    size={16}
+                    class="text-red-400 opacity-0 group-hover:opacity-100 translate-x-[-0.5rem] group-hover:translate-x-0"
+                />
             </a>
 
             <a
-                href="https://documents.liria.work/liria-graphics"
+                href="https://documents.liria.work/graphics"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="w-fit flex"
+                class="group flex gap-2 items-center"
             >
-                <div
-                    class="flex items-center gap-1.5 text-neutral-500 hover:text-neutral-600 transition ease-in-out duration-200"
-                >
-                    <p>documents</p>
-                    <Icon name="lucide:square-arrow-out-up-right" />
-                </div>
+                <span class="text-neutral-500 group-hover:text-neutral-400">
+                    documents
+                </span>
+                <Icon
+                    name="lucide:arrow-up-right"
+                    size={16}
+                    class="text-neutral-400 opacity-0 group-hover:opacity-100 translate-x-[-0.5rem] group-hover:translate-x-0"
+                />
             </a>
         </div>
     </div>
@@ -102,7 +108,7 @@ const { contents } = await getLiriaGraphics();
                             />
                             <p>
                                 {content.price === 0
-                                    ? "FREE"
+                                    ? 'FREE'
                                     : `${content.price} JPY`}
                             </p>
                         </a>
