@@ -1,13 +1,18 @@
 ---
-import "@/styles/base.css";
-import { SEO } from "astro-seo";
+import '@/styles/base.css';
+import { SEO } from 'astro-seo';
+import Analytics from '@vercel/analytics/astro';
 
-const title = "Liria";
-const description = "Liria is a personal circle by Liry24.";
+const title = 'Liria';
+const description = 'Liria is a personal circle by Liry24.';
 ---
 
 <html lang="en">
     <head>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content={Astro.generator} />
         <SEO
             charset="utf-8"
             title={title}
@@ -15,31 +20,31 @@ const description = "Liria is a personal circle by Liry24.";
             openGraph={{
                 basic: {
                     title: title,
-                    type: "website",
-                    image: "",
+                    type: 'website',
+                    image: '',
                 },
             }}
             twitter={{
-                site: "@liria_work",
-                card: "summary_large_image",
-                image: "",
+                site: '@liria_work',
+                card: 'summary_large_image',
+                image: '',
                 title: title,
                 description: description,
             }}
             extend={{
                 meta: [
                     {
-                        name: "viewport",
-                        content: "width=device-width, initial-scale=1",
+                        name: 'viewport',
+                        content: 'width=device-width, initial-scale=1',
                     },
                     {
-                        name: "generator",
+                        name: 'generator',
                         content: Astro.generator,
                     },
                 ],
             }}
         />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <Analytics />
     </head>
     <body class="bg-neutral-900">
         <slot />
