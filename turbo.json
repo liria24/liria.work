@@ -1,12 +1,12 @@
 {
     "$schema": "https://turbo.build/schema.json",
     "ui": "tui",
-    "globalDependencies": [".env"],
+    "globalDependencies": [".env", "tsconfig.json"],
     "tasks": {
         "build": {
             "dependsOn": ["^build"],
             "inputs": ["$TURBO_DEFAULT$", ".env*"],
-            "outputs": [".astro/**", "dist/**"]
+            "outputs": [".astro/**"]
         },
         "home#build": {
             "env": ["MICROCMS_SERVICE_DOMAIN", "MICROCMS_API_KEY"]
