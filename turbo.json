@@ -8,6 +8,9 @@
             "inputs": ["$TURBO_DEFAULT$", ".env*"],
             "outputs": [".astro/**"]
         },
+        "home#build": {
+            "env": ["MICROCMS_SERVICE_DOMAIN", "MICROCMS_API_KEY"]
+        },
         "lint": {
             "dependsOn": ["^lint"]
         },
