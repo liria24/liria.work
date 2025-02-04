@@ -1,0 +1,32 @@
+{
+    "name": "home",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro check && astro build",
+        "preview": "astro preview",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "@astrojs/check": "^0.9.4",
+        "@astrojs/vercel": "8.0.5",
+        "@tailwindcss/vite": "^4.0.3",
+        "@vercel/analytics": "^1.4.1",
+        "astro": "5.2.5",
+        "astro-compressor": "^1.0.0",
+        "astro-font": "^1.0.0",
+        "astro-icon": "^1.1.5",
+        "astro-seo": "^0.8.4",
+        "microcms-js-sdk": "^3.1.2",
+        "tailwindcss": "^4.0.3",
+        "typescript": "^5.7.3"
+    },
+    "devDependencies": {
+        "@iconify-json/lucide": "^1.2.25",
+        "@iconify-json/simple-icons": "^1.2.23",
+        "prettier": "^3.4.2",
+        "prettier-plugin-astro": "^0.14.1"
+    }
+}

@@ -1,14 +1,14 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from '@tailwindcss/vite';
 import icon from 'astro-icon';
 import compressor from 'astro-compressor';
 import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'http://liria.work',
+    site: 'https://liria.work',
     output: 'static',
     adapter: vercel({
         webAnalytics: {
@@ -18,5 +18,6 @@ export default defineConfig({
     image: {
         domains: ['images.microcms-assets.io', 'avatars.githubusercontent.com'],
     },
-    integrations: [tailwind({ applyBaseStyles: false }), icon(), compressor()],
+    integrations: [icon(), compressor()],
+    vite: { plugins: [tailwindcss()] },
 });

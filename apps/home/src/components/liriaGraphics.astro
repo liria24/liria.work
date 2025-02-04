@@ -2,7 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
 
-import LogoLiriaGraphics from '../assets/logo_graphics.svg';
+import LogoLiriaGraphics from '../../public/logo_graphics.svg';
 
 import { getLiriaGraphics } from '../lib/microcms';
 const { contents } = await getLiriaGraphics();
@@ -20,7 +20,7 @@ const { contents } = await getLiriaGraphics();
 </script>
 
 <div
-    class="w-full flex flex-col gap-4 [&_*]:transition-all [&_*]:ease-in-out [&_*]:duration-200 [&_*]:dalay-0"
+    class="w-full flex flex-col gap-4 **:transition-all **:ease-in-out **:duration-200 **:dalay-0"
 >
     <div class="w-fit flex flex-wrap items-center gap-x-8 gap-y-2">
         <a
@@ -33,7 +33,7 @@ const { contents } = await getLiriaGraphics();
                 src={LogoLiriaGraphics}
                 alt="Liria Graphics"
                 loading="eager"
-                class="w-48 sm:w-64 object-cover flex-shrink-0"
+                class="w-48 sm:w-64 object-cover shrink-0"
             />
         </a>
 
@@ -79,7 +79,7 @@ const { contents } = await getLiriaGraphics();
             Array.from(contents).map((content) => () => {
                 if (content.notForSale) {
                     return (
-                        <div class="flex-shrink-0 w-fit gap-0.5 flex flex-col items-center text-neutral-500">
+                        <div class="shrink-0 w-fit gap-0.5 flex flex-col items-center text-neutral-500">
                             <Image
                                 src={content.thumbnail.url}
                                 alt={content.title.en}
@@ -96,7 +96,7 @@ const { contents } = await getLiriaGraphics();
                         <a
                             href={`https://booth.pm/ja/items/${content.booth}`}
                             target="_blank"
-                            class="flex-shrink-0 w-fit gap-0.5 flex flex-col items-center text-neutral-500 hover:opacity-70 transition ease-in-out duration-200"
+                            class="shrink-0 w-fit gap-0.5 flex flex-col items-center text-neutral-500 hover:opacity-70 transition ease-in-out duration-200"
                         >
                             <Image
                                 src={content.thumbnail.url}
