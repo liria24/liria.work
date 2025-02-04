@@ -6,7 +6,7 @@
         "build": {
             "dependsOn": ["^build"],
             "inputs": ["$TURBO_DEFAULT$", ".env*"],
-            "outputs": [".astro/**"]
+            "outputs": [".astro/**", "dist/**"]
         },
         "home#build": {
             "env": ["MICROCMS_SERVICE_DOMAIN", "MICROCMS_API_KEY"]
