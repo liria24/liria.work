@@ -11,6 +11,9 @@
         "home#build": {
             "env": ["MICROCMS_SERVICE_DOMAIN", "MICROCMS_API_KEY"]
         },
+        "documents#build": {
+            "env": ["MICROCMS_SERVICE_DOMAIN", "MICROCMS_API_KEY"]
+        },
         "lint": {
             "dependsOn": ["^lint"]
         },
