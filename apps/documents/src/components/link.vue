@@ -48,7 +48,7 @@ const props = withDefaults(
         </p>
 
         <Icon
-            v-if="external"
+            v-if="props.external"
             icon="lucide:move-up-right"
             :width="16"
             :height="16"
