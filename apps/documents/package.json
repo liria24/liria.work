@@ -1,6 +1,7 @@
 {
     "name": "documents.liria.work",
     "type": "module",
+    "private": true,
     "scripts": {
         "dev": "astro dev",
         "start": "astro dev",
