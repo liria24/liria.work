@@ -19,5 +19,7 @@ export default defineConfig({
         domains: ['images.microcms-assets.io', 'avatars.githubusercontent.com'],
     },
     integrations: [icon(), compressor()],
-    vite: { plugins: [tailwindcss()] },
+    vite: {
+        plugins: [tailwindcss()],
+    },
 });
