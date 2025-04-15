@@ -20,6 +20,9 @@ export default defineConfig({
     },
     integrations: [icon(), compressor()],
     vite: {
-        plugins: [tailwindcss()],
+        plugins: [
+            // @ts-expect-error
+            tailwindcss(),
+        ],
     },
 });
