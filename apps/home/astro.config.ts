@@ -21,7 +21,7 @@ export default defineConfig({
     integrations: [icon(), compressor()],
     vite: {
         plugins: [
-            // @ts-expect-error
+            // @ts-ignore
             tailwindcss(),
         ],
     },
