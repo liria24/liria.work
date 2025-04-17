@@ -1,6 +1,6 @@
 ---
 import '@/styles/base.css';
-import { AstroFont } from 'astro-font';
+import { Font } from 'astro:assets';
 import { SEO } from 'astro-seo';
 import Analytics from '@vercel/analytics/astro';
 
@@ -77,21 +77,7 @@ const defaults: Partial<Props> = {
                 description: description,
             }}
         />
-        <AstroFont
-            config={[
-                {
-                    src: [],
-                    name: 'Montserrat',
-                    // Google Fonts URL
-                    googleFontsURL:
-                        'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap',
-                    preload: true,
-                    display: 'swap',
-                    selector: 'body',
-                    fallback: 'sans-serif',
-                },
-            ]}
-        />
+        <Font cssVariable="--font-montserrat" preload />
         <Analytics />
     </head>
 
@@ -103,3 +89,9 @@ const defaults: Partial<Props> = {
         </div>
     </body>
 </html>
+
+<style>
+    body {
+        font-family: var(--font-montserrat);
+    }
+</style>

@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
 
 import mdx from '@astrojs/mdx';
 import vue from '@astrojs/vue';
@@ -45,5 +45,15 @@ export default defineConfig({
     },
     vite: {
         plugins: [tailwindcss()],
+    },
+    experimental: {
+        fonts: [
+            {
+                provider: fontProviders.google(),
+                name: 'Montserrat',
+                cssVariable: '--font-montserrat',
+                weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+            },
+        ],
     },
 });
