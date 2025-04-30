@@ -17,7 +17,7 @@
         "@astrojs/react": "4.2.4",
         "@astrojs/sitemap": "3.3.0",
         "@astrojs/vercel": "8.1.3",
-        "@astrojs/vue": "5.0.10",
+        "@astrojs/vue": "5.0.13",
         "@tailwindcss/vite": "^4.1.2",
         "@types/react": "^19.1.0",
         "@types/react-dom": "^19.1.1",
@@ -94,7 +94,7 @@
 
     "@astrojs/vercel": ["@astrojs/vercel@8.1.3", "", { "dependencies": { "@astrojs/internal-helpers": "0.6.1", "@vercel/analytics": "^1.5.0", "@vercel/edge": "^1.2.1", "@vercel/nft": "^0.29.2", "@vercel/routing-utils": "^5.0.4", "esbuild": "^0.25.0", "tinyglobby": "^0.2.12" }, "peerDependencies": { "astro": "^5.0.0" } }, "sha512-mHO28cc0FQbA6ncFteW5Hqf2l0gSthPNF8/dpM1sQAOD92Mbyi93/4EhTYj07Xhi3t37FU4tPtzyQoCAn4P4Kg=="],
 
-    "@astrojs/vue": ["@astrojs/vue@5.0.10", "", { "dependencies": { "@vitejs/plugin-vue": "5.2.1", "@vitejs/plugin-vue-jsx": "^4.1.2", "@vue/compiler-sfc": "^3.5.13", "vite": "^6.2.6", "vite-plugin-vue-devtools": "^7.7.2" }, "peerDependencies": { "astro": "^5.0.0", "vue": "^3.2.30" } }, "sha512-x0aXf+qn/uF2Qw+8O9S+avYwAQEUCEZVef3mN0F1Fq2byHA+Y0KNDjfk2iYEN/eHtkNIZCcGXKygblhecjEb7g=="],
+    "@astrojs/vue": ["@astrojs/vue@5.0.13", "", { "dependencies": { "@vitejs/plugin-vue": "5.2.1", "@vitejs/plugin-vue-jsx": "^4.1.2", "@vue/compiler-sfc": "^3.5.13", "vite": "^6.3.4", "vite-plugin-vue-devtools": "^7.7.5" }, "peerDependencies": { "astro": "^5.0.0", "vue": "^3.2.30" } }, "sha512-aM5ekWc/8rXiLtCy4OKXwel5gjnKpl647O/yNtEji8g6bVcec4aetE/KNWkYU6KU57SAsOlINeCDWHiIyqmz6Q=="],
 
     "@astrojs/yaml2ts": ["@astrojs/yaml2ts@0.2.2", "", { "dependencies": { "yaml": "^2.5.0" } }, "sha512-GOfvSr5Nqy2z5XiwqTouBBpy5FyI6DEe+/g/Mk5am9SjILN1S5fOEvYK0GuWHg98yS/dobP4m8qyqw/URW35fQ=="],
 
@@ -1658,6 +1658,8 @@
 
     "@antfu/install-pkg/package-manager-detector": ["package-manager-detector@0.2.11", "", { "dependencies": { "quansync": "^0.2.7" } }, "sha512-BEnLolu+yuz22S56CU1SUKq3XC3PkwD5wv4ikR4MfGvnRVcmzXR9DwSlW2fEamyTPyXHomBJRzgapeuBvRNzJQ=="],
 
+    "@astrojs/vue/vite": ["vite@6.3.4", "", { "dependencies": { "esbuild": "^0.25.0", "fdir": "^6.4.4", "picomatch": "^4.0.2", "postcss": "^8.5.3", "rollup": "^4.34.9", "tinyglobby": "^0.2.13" }, "optionalDependencies": { "fsevents": "~2.3.3" }, "peerDependencies": { "@types/node": "^18.0.0 || ^20.0.0 || >=22.0.0", "jiti": ">=1.21.0", "less": "*", "lightningcss": "^1.21.0", "sass": "*", "sass-embedded": "*", "stylus": "*", "sugarss": "*", "terser": "^5.16.0", "tsx": "^4.8.1", "yaml": "^2.4.2" }, "optionalPeers": ["@types/node", "jiti", "less", "lightningcss", "sass", "sass-embedded", "stylus", "sugarss", "terser", "tsx", "yaml"], "bin": { "vite": "bin/vite.js" } }, "sha512-BiReIiMS2fyFqbqNT/Qqt4CVITDU9M9vE+DKcVAsB+ZV0wvTKd+3hMbkpxz1b+NmEDMegpVbisKiAZOnvO92Sw=="],
+
     "@babel/core/semver": ["semver@6.3.1", "", { "bin": { "semver": "bin/semver.js" } }, "sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA=="],
 
     "@babel/helper-compilation-targets/lru-cache": ["lru-cache@5.1.1", "", { "dependencies": { "yallist": "^3.0.2" } }, "sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w=="],
@@ -1767,6 +1769,10 @@
     "yaml-language-server/vscode-languageserver": ["vscode-languageserver@7.0.0", "", { "dependencies": { "vscode-languageserver-protocol": "3.16.0" }, "bin": { "installServerIntoExtension": "bin/installServerIntoExtension" } }, "sha512-60HTx5ID+fLRcgdHfmz0LDZAXYEV68fzwG0JWwEPBode9NuMYTIxuYXPg4ngO8i8+Ou0lM7y6GzaYWbiDL0drw=="],
 
     "yaml-language-server/yaml": ["yaml@2.2.2", "", {}, "sha512-CBKFWExMn46Foo4cldiChEzn7S7SRV+wqiluAb6xmueD/fGyRHIhX8m14vVGgeFWjN540nKCNVj6P21eQjgTuA=="],
+
+    "@astrojs/vue/vite/fdir": ["fdir@6.4.4", "", { "peerDependencies": { "picomatch": "^3 || ^4" }, "optionalPeers": ["picomatch"] }, "sha512-1NZP+GK4GfuAv3PqKvxQRDMjdSRZjnkq7KfhlNrCNNlZ0ygQFpebfrnfnq/W7fpUnAv9aGWmY1zKx7FYL3gwhg=="],
+
+    "@astrojs/vue/vite/tinyglobby": ["tinyglobby@0.2.13", "", { "dependencies": { "fdir": "^6.4.4", "picomatch": "^4.0.2" } }, "sha512-mEwzpUgrLySlveBwEVDMKk5B57bhLPYovRfPAXD5gA/98Opn0rCDj3GtLwFvCvH5RK9uPCExUROW5NjDwvqkxw=="],
 
     "@babel/helper-compilation-targets/lru-cache/yallist": ["yallist@3.1.1", "", {}, "sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g=="],
 
