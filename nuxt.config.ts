@@ -24,6 +24,7 @@ export default defineNuxtConfig({
         'nuxt-seo-utils',
         '@nuxt/hints',
         '@nuxt/a11y',
+        '@liria24/og-image/nuxt',
     ],
 
     css: ['~/assets/css/main.css'],
@@ -164,6 +165,16 @@ export default defineNuxtConfig({
             baseURL: 'https://liria.me',
         },
         domains: ['github.com'],
+    },
+
+    ogImage: {
+        preset: 'liria',
+        secret: process.env.OG_IMAGE_SECRET,
+        routes: {
+            revoke: {
+                requireToken: true,
+            },
+        },
     },
 
     schemaOrg: {
